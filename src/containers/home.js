@@ -12,19 +12,19 @@ class Home extends Component {
       <Item>
         <Item.Image src={Three} alt="Image not found" />
         <Item.Content>
-          <Item.Header as="a" href="/">
+          <Item.Header as="h3">
             Payment type:{" "}
             {tr.baseType[0].toUpperCase() + tr.baseType.slice(1).toLowerCase()}
           </Item.Header>
-          <Item.Description>- Transaction date: {tr.date}</Item.Description>
-          <Item.Description>
-            <span className="cinema">- Transcation ID: {tr.id} | </span>
-            <span className="cinema">Category ID: {tr.categoryId}</span>
-          </Item.Description>
           <Item.Description>
             Description:{" "}
             {tr.description.original[0].toUpperCase() +
               tr.description.original.slice(1).toLowerCase()}
+          </Item.Description>
+          <Item.Description>- Transaction date: {tr.date}</Item.Description>
+          <Item.Description>
+            <span className="cinema">- Transcation ID: {tr.id} | </span>
+            <span className="cinema">Category ID: {tr.categoryId}</span>
           </Item.Description>
           <Item.Extra>
             <Button href="/account">Account</Button>

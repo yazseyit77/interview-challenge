@@ -26,35 +26,50 @@ export default class Accounts extends Component {
               <Grid.Column width={9}>
                 <Item>
                   <Item.Content>
-                    <Item.Header as="h1">Account</Item.Header>
+                    <Item.Header as="h1" id="fontWeightHeavy">
+                      Account
+                    </Item.Header>
                     <Item.Header as="h4">
                       Account holder:{" "}
-                      {account[0].displayedName
-                        .toLowerCase()
-                        .split(" ")
-                        .map(r => r.charAt(0).toUpperCase() + r.substring(1))
-                        .join(" ")}
+                      <span id="textPrimary">
+                        {account[0].displayedName
+                          .toLowerCase()
+                          .split(" ")
+                          .map(r => r.charAt(0).toUpperCase() + r.substring(1))
+                          .join(" ")}
+                      </span>
                     </Item.Header>
                     <Item.Header as="h4">
-                      Bank: {account[0].accountName}
+                      Bank:{" "}
+                      <span id="textPrimary">{account[0].accountName}</span>
                     </Item.Header>
                     <Item.Description>
-                      Account #: {account[0].accountNumber}
+                      Account number:{" "}
+                      <span id="textSecondary">{account[0].accountNumber}</span>
                     </Item.Description>
                     <Item.Description>
                       Account status:{" "}
-                      {account[0].accountStatus[0].toUpperCase() +
-                        account[0].accountStatus.slice(1).toLowerCase()}
+                      <span id="textSecondary">
+                        {account[0].accountStatus[0].toUpperCase() +
+                          account[0].accountStatus.slice(1).toLowerCase()}
+                      </span>
                     </Item.Description>
                     <Item.Description>
                       Account Type:{" "}
-                      {account[0].accountType[0].toUpperCase() +
-                        account[0].accountType.slice(1).toLowerCase()}
+                      <span id="textSecondary">
+                        {account[0].accountType[0].toUpperCase() +
+                          account[0].accountType.slice(1).toLowerCase()}
+                      </span>
                     </Item.Description>
                     <Item.Extra>
-                      Available balance: ${account[0].availableBalance.amount}
+                      Available balance:{" "}
+                      <span id="textSecondary">
+                        ${account[0].availableBalance.amount}
+                      </span>
                     </Item.Extra>
-                    <Item.Extra>Last updated: {d}</Item.Extra>
+                    <Item.Extra>
+                      Last updated: <span id="textSecondary">{d}</span>
+                    </Item.Extra>
                   </Item.Content>
                 </Item>
               </Grid.Column>
