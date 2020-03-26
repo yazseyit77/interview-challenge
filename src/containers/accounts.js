@@ -8,7 +8,6 @@ export default class Accounts extends Component {
   render() {
     const { account } = data.accounts;
     var d = new Date(account[0].lastUpdated).toDateString();
-    debugger;
     return (
       <div>
         <Nav />
@@ -76,11 +75,6 @@ export default class Accounts extends Component {
             </Grid.Row>
           </Grid>
         </Container>
-        <div class="ui inverted vertical footer segment form-page">
-          <div class="ui container">
-            <span>Copyright &copy; 2020.</span> | All Rights Reserved
-          </div>
-        </div>
       </div>
     );
   }

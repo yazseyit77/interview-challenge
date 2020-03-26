@@ -103,11 +103,6 @@ export default class Balance extends Component {
           <br />
           <br />
         </Container>
-        <div class="ui inverted vertical footer segment form-page">
-          <div class="ui container">
-            <span>Copyright &copy; 2020.</span> | All Rights Reserved
-          </div>
-        </div>
       </div>
     );
   }

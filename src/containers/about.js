@@ -28,7 +28,7 @@ class About extends Component {
                 </h5>
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row centered columns={8}>
+            <Grid.Row centered columns={3}>
               <Grid.Column textAlign="center">
                 <a href="https://yazseyit.com/">
                   <Image src={Web} size="tiny" avatar />
@@ -56,11 +56,6 @@ class About extends Component {
             </Grid.Row>
           </Grid>
         </Container>
-        <div class="ui inverted vertical footer segment form-page">
-          <div class="ui container">
-            <span>Copyright &copy; 2020.</span> | All Rights Reserved
-          </div>
-        </div>
       </div>
     );
   }
