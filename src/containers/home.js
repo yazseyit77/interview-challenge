@@ -12,17 +12,19 @@ class Home extends Component {
       <Item>
         <Item.Image src={Three} alt="Image not found" />
         <Item.Content>
-          <Item.Header as="h3">
+          <Item.Header as="h3" id="textPrimary">
             Payment type:{" "}
             {tr.baseType[0].toUpperCase() + tr.baseType.slice(1).toLowerCase()}
           </Item.Header>
-          <Item.Description>
+          <Item.Description id="textSecondary">
             Description:{" "}
             {tr.description.original[0].toUpperCase() +
               tr.description.original.slice(1).toLowerCase()}
           </Item.Description>
-          <Item.Description>- Transaction date: {tr.date}</Item.Description>
-          <Item.Description>
+          <Item.Description id="textSecondary">
+            - Transaction date: {tr.date}
+          </Item.Description>
+          <Item.Description id="textSecondary">
             <span className="cinema">- Transcation ID: {tr.id} | </span>
             <span className="cinema">Category ID: {tr.categoryId}</span>
           </Item.Description>
@@ -43,7 +45,9 @@ class Home extends Component {
           <Container textAlign="center">
             <h1>Welcome to my account</h1>
             <h5>Please feel free to explore my transactions:</h5>
-            <h5>Total: {TOTAL.count} transactions</h5>
+            <h5>
+              Total: <span id="textSuccess">{TOTAL.count} transactions</span>
+            </h5>
           </Container>
           <br />
           <br />

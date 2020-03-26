@@ -1,121 +1,102 @@
 import React, { Component } from "react";
 import data from "../json/data.json";
-import { Container, Table, Grid, Image, Item } from "semantic-ui-react";
+import { Container, Table, Item, Image } from "semantic-ui-react";
 import Nav from "./nav.js";
 import One from "./img/one.png";
 
 export default class Balance extends Component {
   render() {
     const { balances } = data;
-    const ids = balances[0].daily_labels.map(i => console.log(i));
     return (
       <div>
         <Nav />
         <br />
         <Container textAlign="center">
           <Item.Header as="h1" id="fontWeightHeavy">
-            Balances
+            <Image src={One} size="mini" verticalAlign="middle" alt="" />
+            <span id="rightPush">Balances</span>
           </Item.Header>
-          <br />
+          <Table celled fixed singleLine color="blue">
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell colSpan="6" textAlign="center">
+                  Table ID:<span id="textSecondary"> {balances[0].id}</span>
+                </Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>Daily labels</Table.HeaderCell>
+                <Table.HeaderCell>Daily values</Table.HeaderCell>
+                <Table.HeaderCell>Max</Table.HeaderCell>
+                <Table.HeaderCell>Min</Table.HeaderCell>
+                <Table.HeaderCell>Month labels</Table.HeaderCell>
+                <Table.HeaderCell>Month average values</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell>2019-03-07</Table.Cell>
+                <Table.Cell>$192.79</Table.Cell>
+                <Table.Cell>$192.79</Table.Cell>
+                <Table.Cell>$-452.36</Table.Cell>
+                <Table.Cell>Mar</Table.Cell>
+                <Table.Cell>$111.29</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>2019-03-07</Table.Cell>
+                <Table.Cell>$192.79</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>Apr</Table.Cell>
+                <Table.Cell>$192.79</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>2019-03-07</Table.Cell>
+                <Table.Cell>$192.79</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>May</Table.Cell>
+                <Table.Cell>$192.79</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
 
           <Table celled fixed singleLine color="blue">
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>ID</Table.HeaderCell>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Status</Table.HeaderCell>
-                <Table.HeaderCell>4</Table.HeaderCell>
-                <Table.HeaderCell>5</Table.HeaderCell>
-                <Table.HeaderCell>6</Table.HeaderCell>
-                <Table.HeaderCell>7</Table.HeaderCell>
+                <Table.HeaderCell>Month max</Table.HeaderCell>
+                <Table.HeaderCell>Month min</Table.HeaderCell>
+                <Table.HeaderCell>Day of week labels</Table.HeaderCell>
+                <Table.HeaderCell>Day of week average values</Table.HeaderCell>
+                <Table.HeaderCell>Day of week max</Table.HeaderCell>
+                <Table.HeaderCell>Day of week min</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
               <Table.Row>
-                <Table.Cell>{balances[0].id}</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell
-                  title={[
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-                    "et dolore magna aliqua."
-                  ].join(" ")}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
+                <Table.Cell>$192.79</Table.Cell>
+                <Table.Cell>$111.29</Table.Cell>
+                <Table.Cell>Mon</Table.Cell>
+                <Table.Cell>$191.87</Table.Cell>
+                <Table.Cell>$192.79</Table.Cell>
+                <Table.Cell>$140.86</Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Shorter description</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>Tue</Table.Cell>
+                <Table.Cell>$192.79</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>-</Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.Cell>Jill</Table.Cell>
-                <Table.Cell>Denied</Table.Cell>
-                <Table.Cell>Shorter description</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-              </Table.Row>
-            </Table.Body>
-          </Table>
-          <br />
-          <Table celled fixed singleLine color="blue">
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>ID</Table.HeaderCell>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Status</Table.HeaderCell>
-                <Table.HeaderCell>4</Table.HeaderCell>
-                <Table.HeaderCell>5</Table.HeaderCell>
-                <Table.HeaderCell>6</Table.HeaderCell>
-                <Table.HeaderCell>7</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              <Table.Row>
-                <Table.Cell>John</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell
-                  title={[
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-                    "et dolore magna aliqua."
-                  ].join(" ")}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Jamie</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Shorter description</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Jill</Table.Cell>
-                <Table.Cell>Denied</Table.Cell>
-                <Table.Cell>Shorter description</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
-                <Table.Cell>Approved</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>Wed</Table.Cell>
+                <Table.Cell>$192.79</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>-</Table.Cell>
               </Table.Row>
             </Table.Body>
           </Table>
