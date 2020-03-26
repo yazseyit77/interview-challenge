@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Image } from "semantic-ui-react";
+import { Menu, Image, Input, Icon } from "semantic-ui-react";
 import Trans from "./img/trans.jpg";
 
 export default class Nav extends Component {
@@ -38,6 +38,25 @@ export default class Nav extends Component {
           active={activeItem === "transactions"}
           onClick={this.handleItemClick}
         />
+        <Menu.Menu position="right">
+          <Menu.Item>
+            <Input
+              action={{
+                color: "teal",
+                icon: "search"
+              }}
+              placeholder="Search..."
+            />
+          </Menu.Item>
+          <Menu.Item
+            name="call"
+            active={activeItem === "logout"}
+            onClick={this.handleItemClick}
+          >
+            <span>Call</span>
+            <Icon id="rightPush" color="teal" name="call" />
+          </Menu.Item>
+        </Menu.Menu>
       </Menu>
     );
   }
